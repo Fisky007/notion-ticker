@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; }
+  body { background: #191919; overflow: hidden; height: 46px; }
+  .tradingview-widget-copyright { display: none !important; }
+  .tradingview-widget-container { height: 46px; overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+    symbols: [
+  { proName: "FOREXCOM:SPXUSD", title: "SPX" },
+  { proName: "FOREXCOM:NSXUSD", title: "NASDAQ" },
+  { proName: "FOREXCOM:DJI", title: "DOW" },
+  { proName: "FX:EURUSD", title: "EURUSD" },
+  { proName: "CMCMARKETS:GOLD", title: "GOLD" },
+  { proName: "BYBIT:BTCUSD.P", title: "BTC" },
+  { proName: "BYBIT:ETHUSD.P", title: "ETH" },
+  { proName: "BYBIT:SOLUSD.P", title: "SOL" },
+  { proName: "TVC:VIX", title: "VIX" },
+  { proName: "CME:BTC1!", title: "BTC FUT" },
+  { proName: "TVC:SILVER", title: "SILVER" },
+  { proName: "TVC:DXY", title: "DXY" },
+  { proName: "NASDAQ:QQQ", title: "QQQ" },
+  { proName: "NASDAQ:TSLA", title: "TSLA" },
+  { proName: "NASDAQ:AAPL", title: "AAPL" }
+]
+    ],
+    "showSymbolLogo": true,
+    "isTransparent": true,
+    "displayMode": "compact",
+    "colorTheme": "dark",
+    "locale": "en"
+  }
+  </script>
+</div>
+</body>
+</html>
