@@ -1,53 +1,72 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #0b0f14;
-      overflow: hidden;
-      height: 100%;
-      width: 100%;
-    }
-    /* Helps the iframe feel like a tight strip in Notion */
-    body { display: flex; align-items: center; }
-  </style>
-</head>
-<body>
-  <div class="tradingview-widget-container" style="width:100%; height:60px;">
-    <div class="tradingview-widget-container__widget"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <style>
+      /* Force a dark page behind the widget */
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #0b0f14;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Give the widget a fixed strip height */
+      .tv-strip {
+        height: 64px;           /* adjust if you want taller (e.g., 72) */
+        width: 100%;
+        background: #0b0f14;
+      }
+
+      /* Prevent any white flash */
+      iframe, .tradingview-widget-container {
+        background: #0b0f14 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tv-strip">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+      </div>
+    </div>
+
     <script
       type="text/javascript"
       src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-      async>
-      {
-        "symbols": [
-          {"proName": "FOREXCOM:SPXUSD", "title": "SPX"},
-          {"proName": "FOREXCOM:NSXUSD", "title": "US100"},
-          {"proName": "FOREXCOM:DJI", "title": "DOW"},
-          {"proName": "FX:EURUSD", "title": "EURUSD"},
-          {"proName": "CMCMARKETS:GOLD", "title": "GOLD"},
-          {"proName": "TVC:SILVER", "title": "SILVER"},
-          {"proName": "TVC:DXY", "title": "DXY"},
-          {"proName": "TVC:VIX", "title": "VIX"},
-          {"proName": "BYBIT:BTCUSD.P", "title": "BTC"},
-          {"proName": "BYBIT:ETHUSD.P", "title": "ETH"},
-          {"proName": "BYBIT:SOLUSD.P", "title": "SOL"},
-          {"proName": "CME:BTC1!", "title": "BTC FUT"},
-          {"proName": "NASDAQ:QQQ", "title": "QQQ"},
-          {"proName": "NASDAQ:TSLA", "title": "TSLA"},
-          {"proName": "NASDAQ:AAPL", "title": "AAPL"}
-        ],
-        "showSymbolLogo": true,
-        "colorTheme": "dark",
-        "isTransparent": false,
-        "displayMode": "adaptive",
-        "locale": "en"
-      }
+      async
+    >
+{
+  "symbols": [
+    { "proName": "FOREXCOM:SPXUSD", "title": "SPX" },
+    { "proName": "FOREXCOM:NSXUSD", "title": "US100" },
+    { "proName": "FOREXCOM:DJI", "title": "DOW" },
+    { "proName": "FX:EURUSD", "title": "EURUSD" },
+    { "proName": "CMCMARKETS:GOLD", "title": "GOLD" },
+    { "proName": "TVC:SILVER", "title": "SILVER" },
+    { "proName": "TVC:DXY", "title": "DXY" },
+    { "proName": "TVC:VIX", "title": "VIX" },
+    { "proName": "BYBIT:BTCUSD.P", "title": "BTC" },
+    { "proName": "BYBIT:ETHUSD.P", "title": "ETH" },
+    { "proName": "BYBIT:SOLUSD.P", "title": "SOL" },
+    { "proName": "CME:BTC1!", "title": "BTC1!" },
+    { "proName": "NASDAQ:QQQ", "title": "QQQ" },
+    { "proName": "NASDAQ:TSLA", "title": "TSLA" },
+    { "proName": "NASDAQ:AAPL", "title": "AAPL" }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
     </script>
-  </div>
-</body>
+  </body>
 </html>
